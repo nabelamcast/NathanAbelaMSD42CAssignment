@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5953334366350809908}
   - component: {fileID: 5953334366350809907}
+  - component: {fileID: 4534250552871455740}
   m_Layer: 0
   m_Name: manholeCoverObstacle
   m_TagString: Untagged
@@ -82,3 +83,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4534250552871455740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5953334366350809906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2aa89bff8999ca4b9cf920acadc9f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  obstacleMoveSpeed: 4
+  waveConfig: {fileID: 11400000, guid: ce019b04a73c2f040a53b3066a79e8b4, type: 2}

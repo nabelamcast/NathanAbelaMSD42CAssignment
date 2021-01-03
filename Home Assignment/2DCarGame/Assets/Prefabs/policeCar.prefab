@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7443326532977617441}
   - component: {fileID: 7443326532977617440}
+  - component: {fileID: -8776399019757412944}
   m_Layer: 0
   m_Name: policeCar
   m_TagString: Untagged
@@ -24,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7443326532977617443}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: -2.4, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!212 &7443326532977617440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -82,3 +83,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8776399019757412944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7443326532977617443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2aa89bff8999ca4b9cf920acadc9f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 6559068576937188571, guid: c457651ab028b3448a2b8d24b17a73ca, type: 3}
+  - {fileID: 2436049267964929064, guid: fb2720b15fd93a341bc99231727e36fd, type: 3}
+  - {fileID: 1936676920049468691, guid: 00fcd73e8140de24b9f00d6fd02a0b2d, type: 3}
+  obstacleMoveSpeed: 4
+  waveConfig: {fileID: 11400000, guid: 97423f6932475104ebeb73d509cfeb06, type: 2}

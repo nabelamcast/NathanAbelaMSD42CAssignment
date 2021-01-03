@@ -5,7 +5,7 @@ using UnityEngine;
 public class BackgroundScroller : MonoBehaviour
 {
     // Speed of the scrolling
-    [SerializeField] float backgroundScrollSpeed = 1.5f;
+    [SerializeField] float backgroundScrollSpeed = 1f;
 
     // Material from the texture
     Material myMaterial;
