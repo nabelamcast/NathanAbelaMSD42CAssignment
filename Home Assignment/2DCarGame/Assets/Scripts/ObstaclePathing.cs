@@ -16,7 +16,7 @@ public class ObstaclePathing : MonoBehaviour
     void Start()
     {
         // Get the list waypoints from WaveConfig
-        //waypoints = waveConfig.getWaypoints();
+        waypoints = waveConfig.getWaypoints();
 
         // Set the start position of Enemy to the 1st waypoint position
         transform.position = waypoints[waypointIndex].transform.position;
@@ -61,6 +61,6 @@ public class ObstaclePathing : MonoBehaviour
     // Set up a WaveConfig
     public void SetWaveConfig(WaveConfig waveConfigToSet)
     {
-        //waveConfig = waveConfigToSet;
+        waveConfig = waveConfigToSet;
     }
 }
