@@ -39,6 +39,9 @@ public class ObstaclePathing : MonoBehaviour
             // Making sure z-axis position is 0	
             targetPosition.z = 0f;
 
+            // Rotating the obstacle to move downwards
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, -180));
+
             // Obstacle movement speed at each frame
             var obstacleMovement = waveConfig.getObstacleMoveSpeed() * Time.deltaTime;
 
