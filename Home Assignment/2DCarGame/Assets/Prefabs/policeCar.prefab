@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7443326532977617441}
   - component: {fileID: 7443326532977617440}
   - component: {fileID: -8776399019757412944}
+  - component: {fileID: -1132047895709377837}
   m_Layer: 0
   m_Name: policeCar
   m_TagString: Untagged
@@ -98,3 +99,43 @@ MonoBehaviour:
   waypoints: []
   obstacleMoveSpeed: 4
   waveConfig: {fileID: 11400000, guid: 97423f6932475104ebeb73d509cfeb06, type: 2}
+--- !u!60 &-1132047895709377837
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7443326532977617443}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.08, y: 2.06}
+    newSize: {x: 1.08, y: 2.06}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.53999996, y: 0.31}
+      - {x: 0.53999996, y: 0.87}
+      - {x: 0.32999998, y: 1.03}
+      - {x: -0.32, y: 1.03}
+      - {x: -0.5, y: 0.90999997}
+      - {x: -0.53999996, y: 0.77}
+      - {x: -0.53999996, y: 0.32999998}
+      - {x: -0.51, y: 0.31}
+      - {x: -0.53999996, y: -0.32}
+      - {x: -0.53999996, y: -0.87}
+      - {x: -0.35, y: -1.03}
+      - {x: 0.32, y: -1.03}
+      - {x: 0.53999996, y: -0.9}
+      - {x: 0.53999996, y: -0.35999998}
+      - {x: 0.51, y: 0.31}
