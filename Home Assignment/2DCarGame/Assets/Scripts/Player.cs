@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.6f;
 
+    [SerializeField] float health = 50f;
+
     float xMin, xMax, yMin, yMax;
 
     // Start is called before the first frame update
@@ -20,6 +22,29 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+    }
+
+    // Reduces health whenever player collides with a gameObject which has DamageDealer component
+    private void OnTriggerEnter2D(Collider2D otherObject)
+    {
+        // Access the DamageDealer from the "otherObject" which hits the player
+        DamageDealer dmgDealer = otherObject.gameObject.GetComponent<DamageDealer>();
+
+        // If there is no dmgDealer in otherObject, end the method
+        if (!dmgDealer) { return; }
+
+        ProcessHit(dmgDealer);
+    }
+
+    // Whenever ProcessHit() is called, send us the DamageDealer details
+    private void ProcessHit(DamageDealer dmgDealer)
+    {
+        health -= dmgDealer.GetDamage();
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Setting up a border around the camera
