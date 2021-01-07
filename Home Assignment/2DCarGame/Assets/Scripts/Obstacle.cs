@@ -21,22 +21,23 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        countDownAndShoot();
+        CountDownAndShoot();
     }
 
-    private void countDownAndShoot()
+    private void CountDownAndShoot()
     {
         // For every frame reduces the amount of time to shot
         shotCounter -= Time.deltaTime;
+
         if (shotCounter <= 0f)
         {
-            obstacleFire();
+            ObstacleFire();
             // Reset shotCounter after every fire
             shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
         }
     }
 
-    private void obstacleFire()
+    private void ObstacleFire()
     {
         // Spawn an obstacleBullet at Obstacle position
         GameObject obstacleBullet = Instantiate(bulletObstaclePrefab, transform.position, Quaternion.identity) as GameObject;

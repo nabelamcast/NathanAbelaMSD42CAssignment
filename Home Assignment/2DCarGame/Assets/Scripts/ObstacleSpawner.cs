@@ -9,9 +9,6 @@ public class ObstacleSpawner : MonoBehaviour
 
     [SerializeField] bool looping = false;
 
-    // Always start from Wave 0
-    int startingWave = 0;
-
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -23,28 +20,22 @@ public class ObstacleSpawner : MonoBehaviour
         while (looping); // (looping == true)
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     // When calling Coroutine, specify which Wave we need to spawn obstacles from
     private IEnumerator SpawnAllObstaclesInWave(WaveConfig waveToSpawn)
     {
         // Loop to spawn all obstacles in wave
-        for (int obstacleCount = 1; obstacleCount <= waveToSpawn.getNumberOfObstacles(); obstacleCount++)
+        for (int obstacleCount = 1; obstacleCount <= waveToSpawn.GetNumberOfObstacles(); obstacleCount++)
         {
             // Spawn the obstacle from waveConfig at the position specified by waveConfig waypoints
             var newObstacle = Instantiate(
-                            waveToSpawn.getObstaclePrefab(),
-                            waveToSpawn.getWaypoints()[0].transform.position,
+                            waveToSpawn.GetObstaclePrefab(),
+                            waveToSpawn.GetWaypoints()[0].transform.position,
                             Quaternion.identity);
 
             // The wave will be selected from here and the obstacle applied to it
             newObstacle.GetComponent<ObstaclePathing>().SetWaveConfig(waveToSpawn);
 
-            yield return new WaitForSeconds(waveToSpawn.getTimeBetweenSpawns());
+            yield return new WaitForSeconds(waveToSpawn.GetTimeBetweenSpawns());
         }
     }
 

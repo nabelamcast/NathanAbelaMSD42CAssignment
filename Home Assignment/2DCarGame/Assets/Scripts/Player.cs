@@ -41,6 +41,9 @@ public class Player : MonoBehaviour
     {
         health -= dmgDealer.GetDamage();
 
+        // Destroy on collison
+        dmgDealer.Hit();
+
         if (health <= 0)
         {
             Destroy(gameObject);

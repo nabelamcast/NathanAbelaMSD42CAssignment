@@ -16,7 +16,7 @@ public class ObstaclePathing : MonoBehaviour
     void Start()
     {
         // Get the list waypoints from WaveConfig
-        waypoints = waveConfig.getWaypoints();
+        waypoints = waveConfig.GetWaypoints();
 
         // Set the start position of Enemy to the 1st waypoint position
         transform.position = waypoints[waypointIndex].transform.position;
@@ -43,7 +43,7 @@ public class ObstaclePathing : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, -180));
 
             // Obstacle movement speed at each frame
-            var obstacleMovement = waveConfig.getObstacleMoveSpeed() * Time.deltaTime;
+            var obstacleMovement = waveConfig.GetObstacleMoveSpeed() * Time.deltaTime;
 
             // Move Obstacle from current position to targetPosition, at obstacleMovement speed
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, obstacleMovement);
