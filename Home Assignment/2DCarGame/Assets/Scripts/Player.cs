@@ -46,8 +46,19 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        health = 0;
+
+        // Destroy Player
+        Destroy(gameObject);
+
+        // Finds object of type Level in hierarchy and runs the method LoadGameOver()
+        FindObjectOfType<Level>().LoadGameOver();
     }
 
     // Setting up a border around the camera

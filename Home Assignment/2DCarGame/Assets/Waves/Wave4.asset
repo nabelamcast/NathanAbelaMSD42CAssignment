@@ -17,4 +17,4 @@ MonoBehaviour:
   timeBetweenSpawns: 3
   spawnRandomFactor: 0.5
   numberOfObstacles: 1
-  obstacleMoveSpeed: 2
+  obstacleMoveSpeed: 3.5
