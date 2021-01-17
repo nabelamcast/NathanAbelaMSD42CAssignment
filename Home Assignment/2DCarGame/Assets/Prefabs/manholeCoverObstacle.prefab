@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3068542296523126813}
   - component: {fileID: -2727294141209694355}
   - component: {fileID: 7083743455854969173}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: manholeCoverObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

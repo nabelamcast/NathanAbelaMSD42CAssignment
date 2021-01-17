@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3944193000009371091}
   - component: {fileID: -8015419991593035270}
   - component: {fileID: 2897082674462526887}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: van
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd27710c385edf45aebbce99c79d6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
   shotCounter: 0
   minTimeBetweenShots: 0.5
   maxTimeBetweenShots: 2
