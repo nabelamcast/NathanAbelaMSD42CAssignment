@@ -179,3 +179,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  explosionVFX: {fileID: 3990372445796371417, guid: e26331fa10b8af345be473453d7b5e37, type: 3}
+  explosionVFXDuration: 1

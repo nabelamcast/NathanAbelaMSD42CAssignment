@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip playerDeathSound;
     [SerializeField] [Range(0, 1)] float playerDeathSoundVolume = 0.5f;
 
-    float xMin, xMax, yMin, yMax;
+    float xMin, xMax;
 
     // Start is called before the first frame update
     void Start()
@@ -83,10 +83,6 @@ public class Player : MonoBehaviour
         // xMin = 0, xMax = 1
         xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
-
-        // yMin = 0, yMax = 1
-        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
-        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
     }
 
     // Moves the Car in the x-axis
