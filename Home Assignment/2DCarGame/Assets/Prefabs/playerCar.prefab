@@ -99,6 +99,10 @@ MonoBehaviour:
   moveSpeed: 9
   padding: 0.6
   health: 50
+  damageSound: {fileID: 8300000, guid: 0e97c717875a1314b96b415c85431f59, type: 3}
+  damageSoundVolume: 0.15
+  playerDeathSound: {fileID: 8300000, guid: 26c487b2dd35a6944869ac70292caf8a, type: 3}
+  playerDeathSoundVolume: 0.5
 --- !u!60 &-6832229408507168829
 PolygonCollider2D:
   m_ObjectHideFlags: 0

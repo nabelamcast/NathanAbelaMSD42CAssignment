@@ -10,6 +10,13 @@ public class Player : MonoBehaviour
 
     [SerializeField] float health = 50f;
 
+	// Health reduction and Obstacle Collision
+    [SerializeField] AudioClip damageSound;
+    [SerializeField] [Range(0, 1)] float damageSoundVolume = 0.15f;
+
+    [SerializeField] AudioClip playerDeathSound;
+    [SerializeField] [Range(0, 1)] float playerDeathSoundVolume = 0.5f;
+
     float xMin, xMax, yMin, yMax;
 
     // Start is called before the first frame update
@@ -39,9 +46,12 @@ public class Player : MonoBehaviour
     // Whenever ProcessHit() is called, send us the DamageDealer details
     private void ProcessHit(DamageDealer dmgDealer)
     {
+		// Reduce player health
         health -= dmgDealer.GetDamage();
 
-        // Destroy on collison
+        AudioSource.PlayClipAtPoint(damageSound, Camera.main.transform.position, damageSoundVolume);
+
+        // Destroy on obstacle collison
         dmgDealer.Hit();
 
         if (health <= 0)
@@ -56,6 +66,8 @@ public class Player : MonoBehaviour
 
         // Destroy Player
         Destroy(gameObject);
+
+        AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
 
         // Finds object of type Level in hierarchy and runs the method LoadGameOver()
         FindObjectOfType<Level>().LoadGameOver();
