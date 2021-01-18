@@ -656,6 +656,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 251245836, guid: b55375d186c0e59448ca5445b097a06c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 251245837, guid: b55375d186c0e59448ca5445b097a06c, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 808825181, guid: b55375d186c0e59448ca5445b097a06c, type: 3}
       propertyPath: m_Name
       value: ScoreText

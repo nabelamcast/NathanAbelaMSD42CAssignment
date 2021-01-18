@@ -14,6 +14,12 @@ public class Level : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
+    IEnumerator WaitAndLoadWin()
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("Winner");
+    }
+
     public void LoadStartMenu()
     {
         // Loads the first scene
@@ -27,6 +33,12 @@ public class Level : MonoBehaviour
 
         // Resets the GameSession from the beginning
         FindObjectOfType<GameSession>().ResetGame();
+    }
+
+    public void LoadWinnerScene()
+    {
+        // Loads the Winner scene after 1.5 seconds
+        StartCoroutine(WaitAndLoadWin());
     }
 
     public void LoadGameOver()

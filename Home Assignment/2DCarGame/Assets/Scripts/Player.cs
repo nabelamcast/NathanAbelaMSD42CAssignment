@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.6f;
 
-    [SerializeField] float health = 50f;
+    [SerializeField] int health = 50;
 
 	// Health reduction and Obstacle Collision
     [SerializeField] AudioClip damageSound;
@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     [SerializeField] [Range(0, 1)] float playerDeathSoundVolume = 0.5f;
 
     float xMin, xMax;
+
+    int playerScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 
     // Reduces health whenever player collides with a gameObject which has DamageDealer component
@@ -46,8 +53,9 @@ public class Player : MonoBehaviour
     // Whenever ProcessHit() is called, send us the DamageDealer details
     private void ProcessHit(DamageDealer dmgDealer)
     {
-		// Reduce player health
+        // Reduce player health
         health -= dmgDealer.GetDamage();
+        playerScore = FindObjectOfType<GameSession>().GetScore();
 
         AudioSource.PlayClipAtPoint(damageSound, Camera.main.transform.position, damageSoundVolume);
 
