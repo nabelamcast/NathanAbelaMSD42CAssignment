@@ -19,7 +19,7 @@ public class WaveConfig : ScriptableObject
     [SerializeField] float spawnRandomFactor = 0.3f;
 
     // The number of obstacles in each wave
-    [SerializeField] int numberOfObstacles = 5;
+    [SerializeField] int numberOfObstacles = 1;
 
     // The obstacle movement speed
     [SerializeField] float obstacleMoveSpeed = 2f;

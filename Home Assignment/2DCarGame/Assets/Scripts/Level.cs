@@ -24,6 +24,9 @@ public class Level : MonoBehaviour
     {
         // Loads the 2DCarGame scene
         SceneManager.LoadScene("2DCarGame");
+
+        // Resets the GameSession from the beginning
+        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void LoadGameOver()
