@@ -21,5 +21,11 @@ public class ScoreDisplay : MonoBehaviour
     {
         // Update the Score Text in UI with the score
         scoreText.text = gameSession.GetScore().ToString();
+
+        if (gameSession.GetScore() >= 100)
+        {
+            // Finds object of type Level in hierarchy and runs the method LoadWinnerScene()
+            FindObjectOfType<Level>().LoadWinnerScene();
+        }
     }
 }

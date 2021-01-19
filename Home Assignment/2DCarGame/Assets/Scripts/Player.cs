@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // SerializeField makes the variable editable from Unity
-    [SerializeField] float moveSpeed = 10f;
+    [SerializeField] float moveSpeed = 8f;
     [SerializeField] float padding = 0.6f;
 
     [SerializeField] int health = 50;
@@ -18,8 +18,6 @@ public class Player : MonoBehaviour
     [SerializeField] [Range(0, 1)] float playerDeathSoundVolume = 0.5f;
 
     float xMin, xMax;
-
-    int playerScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +53,6 @@ public class Player : MonoBehaviour
     {
         // Reduce player health
         health -= dmgDealer.GetDamage();
-        playerScore = FindObjectOfType<GameSession>().GetScore();
 
         AudioSource.PlayClipAtPoint(damageSound, Camera.main.transform.position, damageSoundVolume);
 

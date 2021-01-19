@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23607221b35ac545a93b668f8f1503d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 9
+  moveSpeed: 8
   padding: 0.6
   health: 50
   damageSound: {fileID: 8300000, guid: 0e97c717875a1314b96b415c85431f59, type: 3}
