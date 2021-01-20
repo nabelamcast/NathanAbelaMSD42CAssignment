@@ -5,12 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // SerializeField makes the variable editable from Unity
-    [SerializeField] float moveSpeed = 8f;
     [SerializeField] float padding = 0.6f;
 
+    // Player Stats
+    [SerializeField] float moveSpeed = 8f;
     [SerializeField] int health = 50;
 
-	// Health reduction and Obstacle Collision
+	// Health reduction and Obstacle Collision SFX
     [SerializeField] AudioClip damageSound;
     [SerializeField] [Range(0, 1)] float damageSoundVolume = 0.15f;
 
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
         Move();
     }
 
+    // Returns Player health
     public int GetHealth()
     {
         return health;
@@ -39,7 +41,7 @@ public class Player : MonoBehaviour
     // Reduces health whenever player collides with a gameObject which has DamageDealer component
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
-        // Access the DamageDealer from the "otherObject" which hits the player
+        // Accesses the DamageDealer from the "otherObject" which hits the player
         DamageDealer dmgDealer = otherObject.gameObject.GetComponent<DamageDealer>();
 
         // If there is no dmgDealer in otherObject, end the method
@@ -72,6 +74,7 @@ public class Player : MonoBehaviour
         // Destroy Player
         Destroy(gameObject);
 
+        // Plays Players Death SFX
         AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
 
         // Finds object of type Level in hierarchy and runs the method LoadGameOver()

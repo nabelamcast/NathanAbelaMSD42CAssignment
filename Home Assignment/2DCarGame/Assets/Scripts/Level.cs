@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-    // Time delay between each scene change
+    // Delay time in seconds between each scene change
     [SerializeField] float delay = 1.5f;
 
+    // Coroutine method to wait for the given time
     IEnumerator WaitAndLoad()
     {
         yield return new WaitForSeconds(delay);
@@ -16,7 +17,7 @@ public class Level : MonoBehaviour
 
     public void LoadStartMenu()
     {
-        // Loads the first scene
+        // Loads the first scene (Start Menu)
         SceneManager.LoadScene(0);
     }
 
@@ -31,18 +32,19 @@ public class Level : MonoBehaviour
 
     public void LoadWinnerScene()
     {
+        // Loads the winner scene (when score >= 100)
         SceneManager.LoadScene("Winner");
     }
 
     public void LoadGameOver()
     {
-        // Loads the GameOver scene after 1.5 seconds
+        // Loads the GameOver scene (when player health <= 0)
         StartCoroutine(WaitAndLoad());
     }
 
     public void QuitGame()
     {
-        // Only works in .exe file
+        // Quits the application, works only outside the editor
         Application.Quit();
     }
 }

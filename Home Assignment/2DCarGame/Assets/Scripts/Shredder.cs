@@ -9,16 +9,17 @@ public class Shredder : MonoBehaviour
     [SerializeField] AudioClip pointGainSound;
     [SerializeField] [Range(0, 1)] float pointGainSoundVolume = 0.15f;
 
-    // Destroy missile on collision with Shredder game object
+    // Destroys missile on collision with Shredder game object
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
-        // Adding score points to obstacles that have a tag "Obstacle"
-        // Manually added from the Tag and Layer Manager
+        // If an object with the tag "Obstacle" hits collides with the shredder, add score
+        // Assigned from the Tag and Layer Manager of each obstacle
         if (otherObject.gameObject.CompareTag("Obstacle"))
         {
             // Adds score to GameSession Score
             FindObjectOfType<GameSession>().AddToScore(scoreValue);
 
+            // Plays Point Gain SFX
             AudioSource.PlayClipAtPoint(pointGainSound, Camera.main.transform.position, pointGainSoundVolume);
 
             Destroy(otherObject.gameObject);

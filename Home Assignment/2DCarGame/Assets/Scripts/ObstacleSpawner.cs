@@ -7,20 +7,21 @@ public class ObstacleSpawner : MonoBehaviour
     // A list of WaveConfigs
     [SerializeField] List<WaveConfig> waveConfigList;
 
-    [SerializeField] bool looping = false;
+    // Waves of obstacles will keep on spawning
+    [SerializeField] bool looping = true;
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
         do
         {
-            // Start the coroutine that spawns all waves
+            // Starts the coroutine that spawns all waves
             yield return StartCoroutine(SpawnAllWaves());
         }
         while (looping); // (looping == true)
     }
 
-    // When calling Coroutine, specify which Wave we need to spawn obstacles from
+    // While calling Coroutine it specifies which wave needs to spawn obstacles from
     private IEnumerator SpawnAllObstaclesInWave(WaveConfig waveToSpawn)
     {
         // Loop to spawn all obstacles in wave
@@ -32,7 +33,7 @@ public class ObstacleSpawner : MonoBehaviour
                             waveToSpawn.GetWaypoints()[0].transform.position,
                             Quaternion.identity);
 
-            // The wave will be selected from here and the obstacle applied to it
+            // Wave will be selected from here and the obstacle applied to it
             newObstacle.GetComponent<ObstaclePathing>().SetWaveConfig(waveToSpawn);
 
             yield return new WaitForSeconds(waveToSpawn.GetTimeBetweenSpawns());

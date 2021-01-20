@@ -6,6 +6,7 @@ public class GameSession : MonoBehaviour
 {
     int score = 0;
 
+    // To make sure that only 1 GameSession is running
     void Awake()
     {
         SetupSingleton();
@@ -25,6 +26,7 @@ public class GameSession : MonoBehaviour
         }
     }
 
+    // Gets the value of the score
     public int GetScore()
     {
         return score;
@@ -36,6 +38,7 @@ public class GameSession : MonoBehaviour
         score += scoreValue;
     }
 
+    // Destroys gameObject after each new load
     public void ResetGame()
     {
         Destroy(gameObject);

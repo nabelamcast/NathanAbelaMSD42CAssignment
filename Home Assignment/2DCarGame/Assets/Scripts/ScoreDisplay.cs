@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreDisplay : MonoBehaviour
 {
-    // Updates the text in UI
+    // Updates the score text in UI
     Text scoreText;
     GameSession gameSession;
 
@@ -22,6 +22,7 @@ public class ScoreDisplay : MonoBehaviour
         // Update the Score Text in UI with the score
         scoreText.text = gameSession.GetScore().ToString();
 
+        // Ends game (winner scene) once score is >= 100
         if (gameSession.GetScore() >= 100)
         {
             // Finds object of type Level in hierarchy and runs the method LoadWinnerScene()

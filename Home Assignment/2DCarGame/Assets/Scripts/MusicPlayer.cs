@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // To make sure that only 1 MusicPlayer is running
     void Awake()
     {
         SetUpSingleton();
@@ -21,6 +21,7 @@ public class MusicPlayer : MonoBehaviour
         else
         {
             // Does not destroy MusicPlayer when changing scenes
+            // Keeps background music in sync with previous scene
             DontDestroyOnLoad(gameObject);
         }
     }

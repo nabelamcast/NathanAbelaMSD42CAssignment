@@ -33,13 +33,13 @@ public class ObstaclePathing : MonoBehaviour
         if (waypointIndex <= waypoints.Count - 1)
         {
             // Saves the current waypoint in targetPosition
-            // targetPosition is where obstacle will go
+            // targetPosition is where the obstacle will move
             var targetPosition = waypoints[waypointIndex].transform.position;
 
-            // Making sure z-axis position is 0	
+            // Making sure that the z-axis position is 0
             targetPosition.z = 0f;
 
-            // Rotating the obstacle to move downwards
+            // Rotating the obstacle so it faces the player direction
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, -180));
 
             // Obstacle movement speed at each frame
@@ -54,7 +54,7 @@ public class ObstaclePathing : MonoBehaviour
                 waypointIndex++;
             }
         }
-        // If obstacle reaches last waypoint
+        // Obstacle reaches the last waypoint
         else
         {
             Destroy(gameObject);

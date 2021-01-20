@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-    // Updates the text in UI
+    // Updates the health text on the UI
     Text healthText;
     Player player;
 

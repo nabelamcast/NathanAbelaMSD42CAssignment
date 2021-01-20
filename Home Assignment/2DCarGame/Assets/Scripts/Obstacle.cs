@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    // Obstacle Shotting
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.5f;
     [SerializeField] float maxTimeBetweenShots = 4f;
@@ -14,7 +15,7 @@ public class Obstacle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Generates a random number between minTimeBetweenShots and maxTimeBetweenShots 
+        // Generates a random number between minTimeBetweenShots and maxTimeBetweenShots
         shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
     }
 
@@ -24,9 +25,10 @@ public class Obstacle : MonoBehaviour
         CountDownAndShoot();
     }
 
+    // Counts down the time between shots and shoots a bullet
     private void CountDownAndShoot()
     {
-        // For every frame reduces the amount of time to shot
+        // For every frame reduces the amount of time to shot/run
         shotCounter -= Time.deltaTime;
 
         if (shotCounter <= 0f)
@@ -42,7 +44,7 @@ public class Obstacle : MonoBehaviour
         // Spawn an obstacleBullet at Obstacle position
         GameObject obstacleBullet = Instantiate(bulletObstaclePrefab, transform.position, Quaternion.identity) as GameObject;
 
-        // Rotating the obstacleBullet to move downwards
+        // Rotating the obstacleBullet so it faces the player direction
         obstacleBullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -180));
 
         // Obstacle bullet shoots downwards, hence, -bulletObstacleSpeed

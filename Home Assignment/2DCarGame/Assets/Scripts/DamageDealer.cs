@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
+    // Default damage value, but each obstacle has a unique damage value
     [SerializeField] int damage = 1;
 
+    // Explosion particles for when the gameObject gets destroyed
     [SerializeField] GameObject explosionVFX;
     [SerializeField] float explosionVFXDuration = 1f;
 

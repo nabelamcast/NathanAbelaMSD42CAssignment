@@ -24,24 +24,10 @@ public class WaveConfig : ScriptableObject
     // The obstacle movement speed
     [SerializeField] float obstacleMoveSpeed = 2f;
 
+    // Encapsulating each field in a public method
     public GameObject GetObstaclePrefab()
     {
         return obstaclePrefab;
-    }
-
-    public List<Transform> GetWaypoints()
-    {
-        // Each wave can have different waypoints
-        var waveWayPoints = new List<Transform>();
-
-        // Access pathPrefab and for each child
-        // Add it to the List waveWayPoints
-        foreach (Transform child in pathPrefab.transform)
-        {
-            waveWayPoints.Add(child);
-        }
-
-        return waveWayPoints;
     }
 
     public float GetTimeBetweenSpawns()
@@ -62,5 +48,21 @@ public class WaveConfig : ScriptableObject
     public float GetObstacleMoveSpeed()
     {
         return obstacleMoveSpeed;
+    }
+
+    // Returns a list of waypoints
+    public List<Transform> GetWaypoints()
+    {
+        // Each wave can have different waypoints
+        var waveWayPoints = new List<Transform>();
+
+        // Access pathPrefab and for each child
+        // Add it to the List waveWayPoints
+        foreach (Transform child in pathPrefab.transform)
+        {
+            waveWayPoints.Add(child);
+        }
+
+        return waveWayPoints;
     }
 }
